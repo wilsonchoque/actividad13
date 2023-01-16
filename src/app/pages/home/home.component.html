@@ -1,0 +1,46 @@
+<div class="container ">
+    <h2>USO DE PIPES</h2>
+    <div class="mb-3">
+        <label class="form-label">Valor</label>
+        <input  [(ngModel)]="name" type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <p class="my-2"><span class="font-bold">Resultado : </span>
+            {{name | uppercase}}
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <h2> CURRENCY PIPES</h2>
+    <div class="mb-3">
+        <label class="form-label">Valor</label>
+        <input [(ngModel)]="currency" type="number" class="form-control">
+
+        <button type="button" class="btn btn-primary mt-3 mx-1 px-15" value="USD" (click)="cambioUSD()" >USD</button>
+        <button type="button" class="btn btn-secondary mt-3 px-15" value="EUR" (click)="cambioEUR()">EUR</button>
+    </div>
+    <div class="mb-3" >
+        <p class="my-2"><span class="font-bold">Resultado : </span>
+            <span *ngIf="element"> 
+                {{ currency | currency : tipo }}
+            </span>  
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <h2> JSON PIPES</h2>
+    <div class="mb-3">
+        <button type="button" class="btn btn-primary mt-3 mx-1 px-5"  (click)="mostrar()" >Mostrar</button>
+    </div>
+    
+    <div *ngIf="condicion" class="">
+        <div class="p-1">
+            <pre> {{users | json}} </pre>
+            
+        </div>
+    </div>
+
+</div>
